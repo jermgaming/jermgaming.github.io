@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DES Encryption/Decryption</title>
+</head>
+<body>
+  <h1>DES Encryption/Decryption</h1>
+
+  <form>
+    <label for="plaintext">Plaintext:</label>
+    <input type="text" id="plaintext" name="plaintext" required><br>
+
+    <label for="key">Key:</label>
+    <input type="text" id="key" name="key" required><br>
+
+    <input type="radio" id="encrypt" name="operation" value="encrypt" checked>
+    <label for="encrypt">Encrypt</label>
+
+    <input type="radio" id="decrypt" name="operation" value="decrypt">
+    <label for="decrypt">Decrypt</label><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    // Your DES encryption/decryption logic goes here
+
+    // BEGIN: Example code for encryption/decryption
+    function encrypt(plaintext, key) {
+      // Encryption logic
+    }
+
+    function decrypt(ciphertext, key) {
+      // Decryption logic
+    }
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var plaintext = document.getElementById('plaintext').value;
+      var key = document.getElementById('key').value;
+      var operation = document.querySelector('input[name="operation"]:checked').value;
+
+      var result = '';
+
+      if (operation === 'encrypt') {
+        result = encrypt(plaintext, key);
+      } else if (operation === 'decrypt') {
+        result = decrypt(plaintext, key);
+      }
+
+      document.getElementById('result').textContent = result;
+    });
+    // END: Example code for encryption/decryption
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AES Encryption/Decryption</title>
+</head>
+<body>
+  <h1>AES Encryption/Decryption</h1>
+
+  <form>
+    <label for="input">Input Text:</label>
+    <textarea id="input" rows="4" cols="50"></textarea>
+
+    <label for="key">Encryption Key:</label>
+    <input type="text" id="key">
+
+    <button type="button" onclick="encrypt()">Encrypt</button>
+    <button type="button" onclick="decrypt()">Decrypt</button>
+  </form>
+
+  <h2>Output:</h2>
+  <div id="output"></div>
+
+  <script>
+    function encrypt() {
+      // BEGIN: AES encryption logic
+      // Add your AES encryption code here
+      // END: AES encryption logic
+
+      // Display the encrypted text in the output div
+      document.getElementById("output").innerText = "Encrypted Text";
+    }
+
+    function decrypt() {
+      // BEGIN: AES decryption logic
+      // Add your AES decryption code here
+      // END: AES decryption logic
+
+      // Display the decrypted text in the output div
+      document.getElementById("output").innerText = "Decrypted Text";
+    }
+  </script>
+</body>
+</html>

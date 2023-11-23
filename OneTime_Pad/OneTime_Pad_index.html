@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>One-Time Pad Encryption</title>
+    <link rel="stylesheet" type="text/css" href="OneTimePad_style.css">
+
+</head>
+<body>
+    <h1>One-Time Pad Encryption</h1>
+
+    <form>
+        <label for="plaintext">Plaintext:</label>
+        <input type="text" id="plaintext" name="plaintext" />
+
+        <label for="key">Key:</label>
+        <input type="text" id="key" name="key" />
+
+        <button type="button" onclick="encrypt()">Encrypt</button>
+    </form>
+
+    <h2>Encrypted Text:</h2>
+    <p id="encryptedText"></p>
+
+    
+
+    <form>
+        <label for="encryptedText">Encrypted Text:</label>
+        <input type="text" id="encryptedText" name="encryptedText" />
+
+        <label for="key">Key:</label>
+        <input type="text" id="key" name="key" />
+
+        <button type="button" onclick="decrypt()">Decrypt</button>
+    </form>
+
+    <h2>Decrypted Text:</h2>
+    <p id="decryptedText"></p>
+
+    <script src="OneTimePad_script.js"></script>
+</body>
+</html>
