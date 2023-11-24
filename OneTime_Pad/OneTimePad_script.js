@@ -1,46 +1,36 @@
+function xor(text, key) {
+    const result = [];
+    for (let i = 0; i < text.length; i++) {
+        const charCodeText = text.charCodeAt(i);
+        const charCodeKey = key.charCodeAt(i);
+        const encryptedCharCode = charCodeText ^ charCodeKey;
+        result.push(String.fromCharCode(encryptedCharCode));
+    }
+    return result.join('');
+}
+
 function encrypt() {
-    var plaintext = document.getElementById("plaintext").value;
-    var key = document.getElementById("key").value;
+    const inputText = document.getElementById('inputText').value;
+    const key = document.getElementById('key').value;
 
-    var encryptedText = ""; // Store the encrypted text
-
-    // Check if the plaintext and key have the same length
-    if (plaintext.length !== key.length) {
-        alert("Plaintext and key must have the same length");
+    if (inputText.length !== key.length) {
+        alert("Input and key lengths must be the same.");
         return;
     }
 
-    // Loop through each character in the plaintext and perform XOR operation with the corresponding character in the key
-    for (var i = 0; i < plaintext.length; i++) {
-        var plaintextChar = plaintext.charCodeAt(i);
-        var keyChar = key.charCodeAt(i);
-        var encryptedChar = plaintextChar ^ keyChar;
-        encryptedText += String.fromCharCode(encryptedChar);
-    }
-
-    document.getElementById("encryptedText").textContent = encryptedText;
+    const encryptedText = xor(inputText, key);
+    document.getElementById('outputText').value = encryptedText;
 }
 
 function decrypt() {
-    var encryptedText = document.getElementById("encryptedText").textContent;
-    var key = document.getElementById("key").value;
+    const inputText = document.getElementById('inputText').value;
+    const key = document.getElementById('key').value;
 
-    var decryptedText = ""; // Store the decrypted text
-
-    // Check if the encrypted text and key have the same length
-    if (encryptedText.length !== key.length) {
-        alert("Encrypted text and key must have the same length");
+    if (inputText.length !== key.length) {
+        alert("Input and key lengths must be the same.");
         return;
     }
 
-    // Loop through each character in the encrypted text and perform XOR operation with the corresponding character in the key
-    for (var i = 0; i < encryptedText.length; i++) {
-        var encryptedChar = encryptedText.charCodeAt(i);
-        var keyChar = key.charCodeAt(i);
-        var decryptedChar = encryptedChar ^ keyChar;
-        decryptedText += String.fromCharCode(decryptedChar);
-    }
-
-    document.getElementById("decryptedText").textContent = decryptedText;
+    const decryptedText = xor(inputText, key);
+    document.getElementById('outputText').value = decryptedText;
 }
-    

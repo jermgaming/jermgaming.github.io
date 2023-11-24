@@ -1,41 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>One-Time Pad Encryption</title>
-    <link rel="stylesheet" type="text/css" href="OneTimePad_style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Time Pad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>One-Time Pad Encryption</h1>
+    <h2>One-Time Pad</h2>
+    <label for="inputText">Enter Text:</label>
+    <textarea id="inputText" rows="4" cols="50"></textarea>
+    <br>
+    <label for="key">Enter Key (same length as input):</label>
+    <input type="text" id="key" maxlength="50" placeholder="KEY">
+    <br>
+    <button onclick="encrypt()">Encrypt</button>
+    <button onclick="decrypt()">Decrypt</button>
+    <br>
+    <label for="outputText">Result:</label>
+    <textarea id="outputText" rows="4" cols="50" readonly></textarea>
 
-    <form>
-        <label for="plaintext">Plaintext:</label>
-        <input type="text" id="plaintext" name="plaintext" />
+    <script>
+        function xor(text, key) {
+    let result = [];
+    for (let i = 0; i < text.length; i++) {
+        let charCodeText = text.charCodeAt(i);
+        let charCodeKey = key.charCodeAt(i);
+        let encryptedCharCode = charCodeText ^ charCodeKey;
+        result.push(String.fromCharCode(encryptedCharCode));
+    }
+    return result.join('');
+}
 
-        <label for="key">Key:</label>
-        <input type="text" id="key" name="key" />
+function encrypt() {
+    let inputText = document.getElementById('inputText').value;
+    let key = document.getElementById('key').value;
 
-        <button type="button" onclick="encrypt()">Encrypt</button>
-    </form>
+    if (inputText === '' || key === '') {
+        alert("Input text or key cannot be empty.");
+        return;
+    }
 
-    <h2>Encrypted Text:</h2>
-    <p id="encryptedText"></p>
+    if (inputText.length !== key.length) {
+        alert("Input and key lengths must be the same.");
+        return;
+    }
 
-    
+    let encryptedText = xor(inputText, key);
+    document.getElementById('outputText').value = encryptedText;
+}
 
-    <form>
-        <label for="encryptedText">Encrypted Text:</label>
-        <input type="text" id="encryptedText" name="encryptedText" />
+function decrypt() {
+    let inputText = document.getElementById('inputText').value;
+    let key = document.getElementById('key').value;
 
-        <label for="key">Key:</label>
-        <input type="text" id="key" name="key" />
+    if (inputText === '' || key === '') {
+        alert("Input text or key cannot be empty.");
+        return;
+    }
 
-        <button type="button" onclick="decrypt()">Decrypt</button>
-    </form>
+    if (inputText.length !== key.length) {
+        alert("Input and key lengths must be the same.");
+        return;
+    }
 
-    <h2>Decrypted Text:</h2>
-    <p id="decryptedText"></p>
-
-    <script src="OneTimePad_script.js"></script>
+    let decryptedText = xor(inputText, key);
+    document.getElementById('outputText').value = decryptedText;
+}    </script>
 </body>
 </html>

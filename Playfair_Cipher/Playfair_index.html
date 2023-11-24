@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Playfair Cipher Encryption/Decryption</title>
-  <link rel="stylesheet" type="text/css" href="Playfair.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playfair Cipher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Playfair Cipher Encryption/Decryption</h1>
-    <label for="message">Enter a message:</label>
-    <input type="text" id="message">
+    <h2>Playfair Cipher</h2>
+    <label for="inputText">Enter Text:</label>
+    <textarea id="inputText" rows="4" cols="50"></textarea>
     <br>
-    <label for="key">Enter a keyword:</label>
-    <input type="text" id="key">
+    <label for="key">Enter Key:</label>
+    <input type="text" id="key" maxlength="25" placeholder="KEY">
     <br>
     <button onclick="encrypt()">Encrypt</button>
     <button onclick="decrypt()">Decrypt</button>
-    <div id="result"></div>
-  </div>
-  <script src="Playfair_script.js"></script>
+    <br>
+    <label for="outputText">Result:</label>
+    <textarea id="outputText" rows="4" cols="50" readonly></textarea>
+
+    <script src="Playfair_script.js">
+            </script>
 </body>
 </html>
