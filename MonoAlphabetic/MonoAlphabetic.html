@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monoalphabetic Substitution</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <link rel="stylesheet" href="MonoAlphabetic_style.css">
+</head>
+<body>
+    <div class="container">
+    <h2 >Monoalphabetic Substitution Cipher</h2>
+
+    <form id="cipherForm">
+        <label for="plaintext">Enter Text:</label>
+        <textarea id="plaintext" rows="4" cols="50"></textarea>
+        <br>
+        <label for="key">Enter Key:</label> <br>
+        <input type="text" id="key" maxlength="26" placeholder="Enter a permutation of the alphabet">
+
+        <button type="button" onclick="decrypt()">Encrypt</button>
+        <button type="button" onclick="encrypt()">Decrypt</button>
+    </form>
+    
+    
+    <div id="result"></div>
+</div>
+    <script src="MonoAlphabetic_script.js"></script>
+</body>
+</html>
