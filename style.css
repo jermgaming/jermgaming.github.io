@@ -1,27 +1,30 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(241, 241, 241);
+  
+    
+    background-color: #0074d9;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
 .container {
+   
     max-width: 400px;
     margin: 100px auto;
     padding: 35px;
     border: 3px solid #ffffff;
     border-radius: 20px;
     background-color: #f5f2f2;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow:  9px 9px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, color 0.3s;
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 50px;
     margin-bottom: 20px;
     margin-top: 10px;
-    color: #161515;
+    color: #0056b3;
     align-items: start;
 }
 
@@ -40,7 +43,7 @@ img{
 
 .cipher-button {
     display: block;
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin: 10px 0;
     background-color: #0074d9;
@@ -56,10 +59,15 @@ img{
 
 .cipher-button:hover {
     background-color: #0056b3;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
 }
 
 .cipher-button:focus {
     outline: none;
 }
+
+.cipher-button:active {
+    background-color: #2980b9;
+  }
 
